@@ -1,6 +1,16 @@
 package cr.data.impl;
 
 import cr.data.TypeMetadata;
+import cr.data.types.impl.TypeMetadataBoolImpl;
+import cr.data.types.impl.TypeMetadataDateImpl;
+import cr.data.types.impl.TypeMetadataEnumImpl;
+import cr.data.types.impl.TypeMetadataFileImpl;
+import cr.data.types.impl.TypeMetadataIntImpl;
+import cr.data.types.impl.TypeMetadataListImpl;
+import cr.data.types.impl.TypeMetadataMultiselectImpl;
+import cr.data.types.impl.TypeMetadataNumberImpl;
+import cr.data.types.impl.TypeMetadataStringImpl;
+import cr.data.types.impl.TypeMetadataStructureImpl;
 import cr.session.security.impl.PermissionChecker;
 
 /**
@@ -14,6 +24,44 @@ import cr.session.security.impl.PermissionChecker;
  */
 public class TypeBuilder
 {
+	/**
+	 * 
+	 */
+	static public final TypeMetadata BOOLEAN	= new TypeMetadataBoolImpl();
+	/**
+	 * 
+	 */
+	static public final TypeMetadata INTEGER	= new TypeMetadataIntImpl();
+	/**
+	 * 
+	 */
+	static public final TypeMetadata NUMBER		= new TypeMetadataNumberImpl();
+	/**
+	 * 
+	 */
+	static public final TypeMetadata ENUM		= new TypeMetadataEnumImpl();
+	/**
+	 * 
+	 */
+	static public final TypeMetadata MULTISELECT= new TypeMetadataMultiselectImpl();
+	/**
+	 * 
+	 */
+	static public final TypeMetadata STRING		= new TypeMetadataStringImpl();
+	/**
+	 * 
+	 */
+	static public final TypeMetadata DATE		= new TypeMetadataDateImpl();
+	/**
+	 * 
+	 */
+	static public final TypeMetadata LIST		= new TypeMetadataListImpl();
+	/**
+	 * 
+	 */
+	static public final TypeMetadata FILE		= new TypeMetadataFileImpl();
+	
+	
 	/**
 	 * 
 	 * Создать структуру
@@ -35,7 +83,7 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getBooleanType()
 	{
-		return Holder.booleanType;
+		return BOOLEAN;
 	}
 	
 	/**
@@ -44,7 +92,7 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getInteger()
 	{
-		return Holder.integerType;
+		return INTEGER;
 	}
 	
 	/**
@@ -53,7 +101,7 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getNumberType()
 	{
-		return Holder.numberType;
+		return NUMBER;
 	}
 	
 	/**
@@ -62,7 +110,7 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getEnumType()
 	{
-		return Holder.enumType;
+		return ENUM;
 	}
 	
 	/**
@@ -71,7 +119,7 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getMultiselectType()
 	{
-		return Holder.multiselectType;
+		return MULTISELECT;
 	}
 	
 	/**
@@ -80,7 +128,7 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getStringType()
 	{
-		return Holder.stringType;
+		return STRING;
 	}
 	
 	/**
@@ -89,7 +137,7 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getDateType()
 	{
-		return Holder.dateType;
+		return DATE;
 	}
 	
 	/**
@@ -98,7 +146,7 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getListType()
 	{
-		return Holder.listType;
+		return LIST;
 	}
 	
 	/**
@@ -107,22 +155,6 @@ public class TypeBuilder
 	 */
 	static public TypeMetadata getFileType()
 	{
-		return Holder.fileType;
-	}
-	
-
-	
-	// Встроенные типы
-	static private class Holder
-	{
-		static public final TypeMetadata booleanType	= new TypeMetadataPredefinedImpl("boolean");
-		static public final TypeMetadata integerType	= new TypeMetadataPredefinedImpl("ineteger");
-		static public final TypeMetadata numberType		= new TypeMetadataPredefinedImpl("number");
-		static public final TypeMetadata enumType		= new TypeMetadataPredefinedImpl("enum");
-		static public final TypeMetadata multiselectType= new TypeMetadataPredefinedImpl("multiselect");
-		static public final TypeMetadata stringType		= new TypeMetadataPredefinedImpl("string");
-		static public final TypeMetadata dateType		= new TypeMetadataPredefinedImpl("date");
-		static public final TypeMetadata listType		= new TypeMetadataPredefinedImpl("list");
-		static public final TypeMetadata fileType		= new TypeMetadataPredefinedImpl("file");
+		return FILE;
 	}
 }

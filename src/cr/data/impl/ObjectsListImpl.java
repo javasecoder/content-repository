@@ -12,8 +12,15 @@ import cr.session.security.impl.PermissionChecker;
 public class ObjectsListImpl implements ObjectsList
 {
 	
-	public ObjectsListImpl(final PermissionChecker checker)
+	private final TypeMetadataBaseImpl typeMetadata;
+	private final PermissionChecker checker;
+	private final Map<String, ObjectItem> objects = new HashMap<String, ObjectItem>();
+	private Map<String, ObjectItem> lockedObjects = null;
+	
+	
+	public ObjectsListImpl(final TypeMetadataBaseImpl typeMetadata, final PermissionChecker checker)
 	{
+		this.typeMetadata = typeMetadata;
 		this.checker = checker;
 	}
 	
@@ -72,12 +79,6 @@ public class ObjectsListImpl implements ObjectsList
 	@Override
 	public TypeMetadata getTypeMetadata()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return this.typeMetadata;
 	}
-	
-	
-	private final PermissionChecker checker;
-	private final Map<String, ObjectItem> objects = new HashMap<String, ObjectItem>();
-	private Map<String, ObjectItem> lockedObjects = null;
 }

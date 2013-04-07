@@ -1,10 +1,11 @@
 package cr.data.impl;
 
+import java.util.Collections;
 import java.util.Map;
 
 import cr.data.TypeMetadata;
 
-public class TypeMetadataPredefinedImpl extends TypeMetadataBaseImpl
+abstract public class TypeMetadataPredefinedImpl extends TypeMetadataBaseImpl
 {
 
 	public TypeMetadataPredefinedImpl(final String name)
@@ -46,8 +47,7 @@ public class TypeMetadataPredefinedImpl extends TypeMetadataBaseImpl
 	@Override
 	public Map<String, TypeMetadata> getFields()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return Collections.emptyMap();
 	}
 
 	@Override
@@ -55,5 +55,4 @@ public class TypeMetadataPredefinedImpl extends TypeMetadataBaseImpl
 	{
 		return true;
 	}
-
 }

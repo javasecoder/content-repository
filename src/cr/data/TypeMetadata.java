@@ -4,6 +4,8 @@ import java.util.Map;
 
 /**
  * 
+ * 
+ * 
  * @author dgladkov
  *
  */
@@ -58,4 +60,9 @@ public interface TypeMetadata
 	 * @return
 	 */
 	boolean isPredefined();
+	/**
+	 * 
+	 * @return
+	 */
+	long getTypeId();
 }

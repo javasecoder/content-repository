@@ -1,8 +1,10 @@
-package cr.data.impl;
+package cr.data.types.impl;
 
 import java.util.Map;
 
+import cr.data.ObjectItem;
 import cr.data.TypeMetadata;
+import cr.data.impl.TypeMetadataBaseImpl;
 import cr.session.security.impl.PermissionChecker;
 
 public class TypeMetadataStructureImpl extends TypeMetadataBaseImpl
@@ -48,6 +50,20 @@ public class TypeMetadataStructureImpl extends TypeMetadataBaseImpl
 	public boolean isPredefined()
 	{
 		return false;
+	}
+
+	@Override
+	public long getTypeId()
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ObjectItem generateNewObject(final String name)
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
